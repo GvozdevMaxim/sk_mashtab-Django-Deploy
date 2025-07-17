@@ -1,0 +1,324 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SteelCity - Construction Building Template</title>
+    <meta name="description" content="SteelCity - Construction Building Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'core/assets/img/fevicon.ico' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'core/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/fontawsome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/fontawsome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/responsive.css' %}">
+</head>
+
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<!-- Preloader -->
+
+  <!-- header part start -->
+    <div id="header-fixed-height"></div>
+    <header class="header-area-one" id="sticky-header">
+        <nav class="navbar navbar-expand-lg d-none d-lg-block">
+            <div class="container-fluid">
+                <a class="navbar-brand me-0" href="{% url 'home' %}">
+                    <img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">На главную</a>
+                        </li>
+
+                    </ul>
+                    <div class="header-right-info d-flex align-items-center">
+
+                        <div class="help-number d-flex align-items-center">
+                            <div class="icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info">
+                                <p>Нужна помощь?</p>
+                                <h6>
+                                    <a href="tel:+7 902 866-77-95">
+                                        +7 902 866-77-95
+                                    </a>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+           <!-- mobile navbar part start -->
+    <div class="mobile-menu-area d-block d-lg-none">
+        <div class="mobile-topbar">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="logo">
+                        <img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo">
+                    </div>
+                    <div class="bars">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu-main">
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo"></a>
+            </div>
+            <div class="close-mobile-menu"><i class="fas fa-times"></i></div>
+            <div class="menu-body">
+                <div class="menu-list">
+                    <ul class="list-unstyled">
+                        <li class="sub-mobile-menu">
+                            <a href="{% url 'home' %}">Главная страница</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile navbar part end -->
+    </header>
+    <!-- header part end -->
+
+
+<!-- main area part start -->
+
+<main>
+
+    <!-- bread crumb part start -->
+    <section class="breadcrumb-area" data-background="{% static 'core/assets/img/bg/bread-crumb-bg.png' %}">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <div class="breadcrumb-title">
+                            <h2 class="title text-white">Инфорация о проекте </h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <ul class="list-unstyled bread-crumb text-md-end">
+                            <li><a href="{% url 'home' %}">Домашняя страница</a></li>
+                            <li>Проект</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- bread crumb part end -->
+
+    <!-- project details part start -->
+    <section class="project-details-area">
+        <div class="container">
+            <div class="project-details-information">
+                <h2 class="project-details-title">{{ project.company }}</h2>
+                <p>{{ project.address}}</p>
+                <p>{{ project.text }}
+                </p>
+                <div class="project-inner-image">
+                    <div class="row g-4">
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="img">
+                                <img src="{{project.photo1.url }}"
+                                     class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="img">
+                                {% if project.photo2 %}
+                                <img src="{{ project.photo2.url }}"
+                                     class="img-fluid w-100">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4">
+                            <div class="img">
+                                 {% if project.photo3 %}
+                                <img src="{{ project.photo2.url }}"
+                                     class="img-fluid w-100">
+                                 {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+    <ul class="list-unstyled">
+        {% if prev_project %}
+            <li class="prev">
+                <a href="{% url 'project_detail' prev_project.pk %}">
+                    <i class="fas fa-long-arrow-alt-left"></i> Предыдущий проект
+                </a>
+            </li>
+        {% endif %}
+
+        {% if next_project %}
+            <li class="next">
+                <a href="{% url 'project_detail' next_project.pk %}">
+                    Следующий проект <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>
+            </div>
+        </div>
+    </section>
+    <!-- project details part end -->
+
+    <!-- call to action part start -->
+    <section class="call-to-action-area">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image">
+                    <img src="{% static 'core/assets/img/images/call-to-action-image.png' %}" alt="call-to-action-image"
+                         class="img-fluid w-100">
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="info">
+                    <div class="phone-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-white title">Нужна помощь? Обращайтесь! <a href="tel:+7 902 866-77-95">7 902 866-77-95</a></h3>
+                    <p class="text-white">Мы всегда готовы прийти на помощь! </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- call to action part end -->
+
+
+</main>
+<!-- main area part end -->
+
+<!-- scroll top part start -->
+<button class="scroll-to-top">
+    <i class="fas fa-angle-up"></i>
+</button>
+<!-- scroll top part end -->
+
+    <!-- footer part start -->
+    <footer class="footer-area-one">
+        <div class="footer-area-one-bg">
+            <div class="container">
+                <div class="footer-top-one">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="footer-widget">
+                                <div class="footer-logo">
+                                    <a href="{% url 'home' %}">
+                                         <img src= "{% static 'core/assets/img/logo/white-logo.png' %}" alt="white-logo">
+
+                                    </a>
+                                </div>
+                                <div class="footer-content">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="footer-widget">
+                                <h4 class="footer-title uppercase">Контакты</h4>
+                                <div class="footer-address">
+                                    <ul>
+                                        <li class="d-flex">
+                                            <div class="icon">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>г. Челябинск, Копейское шоссе, 16А</p>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <div class="icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="content">
+                                                <a href="mailto:skmasshtab74@mail.ru">skmasshtab74@mail.ru</a>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex">
+                                            <div class="icon">
+                                                <i class="fas fa-phone-alt"></i>
+                                            </div>
+                                            <div class="content">
+                                                <a href="tel:(405)555-0128">+7 902 866-77-95</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="copyright">
+                                <p>© СК Масштаб 2025 | Все права защищены</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="links text-lg-end">
+                                <ul>
+                                    <li><a href="{% url 'confidence' %}">Политика конфиденциальности</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end -->
+
+
+<!-- JS here -->
+<!-- Подключаем jQuery -->
+<script src="{% static 'core/assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'core/assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'core/assets/js/jquery.odometer.min.js' %}"></script>
+<script src="{% static 'core/assets/js/jquery.appear.js' %}"></script>
+<script src="{% static 'core/assets/js/wow.min.js' %}"></script>
+<script src="{% static 'core/assets/js/slick.min.js' %}"></script>
+<script src="{% static 'core/assets/js/script.js' %}"></script>
+
+</body>
+
+</html>

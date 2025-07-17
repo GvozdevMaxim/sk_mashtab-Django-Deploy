@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+*.env
+.env
+*.venv
+venv/
+env/
+ENV/
+build/
+dist/
+
+# Django
+db.sqlite3
+*.log
+media/
+staticfiles/
+local_settings.py
+
+# dotenv
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# macOS / Linux
+.DS_Store
+*.swp
+*.swo
+
+# Docker
+*.pid
+*.sock
+*.tar
+*.log
+*.db
+docker-compose.override.yml
+
+# Nginx temp files
+nginx/*.pid
+nginx/*.log
+
+# Gunicorn
+gunicorn.log
+
+# PyCharm
+.idea/
+
+# Node
+node_modules/
+
+# Backup
+*.bak
+*.old
+
+# JSON dumps
+*.json
+
+# Systemd, SSL, certs
+certs/
+*.crt
+*.key
+*.pem

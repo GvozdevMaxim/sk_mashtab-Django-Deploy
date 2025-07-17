@@ -1,0 +1,64 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-server
+    restart: always
+    networks:
+      - dbnet
+    expose:
+      - 8088
+    ports:
+      - "80:8088"
+    volumes:
+      - ./skmashtab/static:/app/www/skmashtab/static
+      - ./skmashtab/media:/app/www/skmashtab/media
+      - ./skmashtab/logs:/app/www/skmashtab/logs
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - skmashtab
+  skmashtab:
+    build: ./skmashtab
+    image: skmashtab
+    restart: always
+    command: "gunicorn -c gunicorn.py skmashtab.wsgi"
+    env_file:
+      - .env
+    links:
+      - "postgres:dbps"
+    networks:
+      - dbnet
+    volumes:
+      - ./skmashtab:/app/www/skmashtab
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    links:
+      - "postgres:db"
+    networks:
+      - dbnet
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: psgr
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    networks:
+      - dbnet
+networks:
+  dbnet:
+    driver: bridge
+volumes:
+  postgres-data:

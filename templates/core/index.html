@@ -1,0 +1,737 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>СК Масштаб</title>
+    <meta name="description" content="SteelCity - Construction Building Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'core/assets/img/fevicon.ico' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'core/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/fontawsome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/fontawsome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/assets/css/responsive.css' %}">
+</head>
+
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<!-- Preloader -->
+
+<!-- header part start -->
+<div id="header-fixed-height"></div>
+<header class="header-area-one" id="sticky-header">
+    <nav class="navbar navbar-expand-lg d-none d-lg-block">
+        <div class="container-fluid">
+            <a class="navbar-brand me-0" href="{% url 'home' %}">
+                <img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">На главную</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us" >О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#our-projects">Проекты</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+                <div class="header-right-info d-flex align-items-center">
+
+                    <div class="help-number d-flex align-items-center">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info">
+                            <p>Нужна помощь?</p>
+                            <h6>
+                                <a href="tel:+7 902 866-77-95">
+                                    +7 902 866-77-95
+                                </a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- mobile navbar part start -->
+    <div class="mobile-menu-area d-block d-lg-none">
+        <div class="mobile-topbar">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="logo">
+                        <img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo">
+                    </div>
+                    <div class="bars">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu-main">
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'core/assets/img/logo/logo.png' %}" alt="logo"></a>
+            </div>
+            <div class="close-mobile-menu"><i class="fas fa-times"></i></div>
+            <div class="menu-body">
+                <div class="menu-list">
+                    <ul class="list-unstyled">
+                        <li class="sub-mobile-menu">
+                            <a href="{% url 'home' %}">Главная страница</a>
+                        </li>
+                        <li class="sub-mobile-menu">
+                            <a href="#about-us">О нас</a>
+                        </li>
+                        <li class="sub-mobile-menu">
+                            <a href="#our-projects">Проекты</a>
+
+                        </li>
+                        <li class="sub-mobile-menu">
+                            <a href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile navbar part end -->
+</header>
+<!-- header part end -->
+
+<!-- main area part start -->
+<main>
+
+    <!-- banner part start -->
+    <section class="banner-area-one" data-background="{% static 'core/assets/img/bg/banner-bg.png' %}">
+        <svg class="banner-shape" viewBox="0 0 1056 979" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="primary-colour"
+                  d="M1197.56 1040L103.744 1040L231.189 818.024L266.474 755.955L327.563 862.735L763.09 862.735L981.643 481.904L764.143 101.074L641.964 101.074L716.746 -29.3763L776.255 -133L1197.56 -133L1197.56 1040Z"/>
+            <path class="primary-colour" d="M206 869L649.304 89H773.856L995 479.513L777.415 869H206Z"/>
+            <path class="black-colour" d="M647.5 92H321L160.5 373.5L310.5 685.5L647.5 92Z"/>
+            <path class="black-colour"
+                  d="M165.887 383.537L133.762 327.254L132.183 324.624L131.656 323.572L195.905 211.006L334.41 -29.9063L338.096 -29.9063L582.454 -29.3802L716.746 -29.3802L641.964 101.07L626.165 101.07L347.576 101.07L328.09 101.07L165.887 383.537Z"/>
+            <path class="primary-colour"
+                  d="M66.8821 1040L-0.000391173 1040L127.445 818.023L193.801 818.023L66.8821 1040Z"/>
+            <path class="black-colour" d="M460.277 1040L103.746 1040L282.275 728.602L460.277 1040Z"/>
+        </svg>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="banner-info">
+                            <span class="sub-title uppercase wow fadeInLeft" data-wow-delay=".2s">
+                                Строительная компания<br>ООО СК "Масштаб"</span>
+                        <h1 class="banner-title wow fadeInLeft" data-wow-delay=".4s">Наша цель — создавать качественные
+                            и надежные объекты.</h1>
+                        <p class="wow fadeInLeft" data-wow-delay=".6s">Много лет мы специализируемся на возведении
+                            зданий и сооружений любой сложности — от нулевого цикла до ввода объектов в
+                            эксплуатацию.</p>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part end -->
+
+    <!-- about us part start -->
+    <section class="about-us-area-one" id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 col-xxl-5">
+                    <div class="about-image position-relative">
+                        <div class="image">
+                            <img src="{% static 'core/assets/img/about-us/about-us.png' %}" alt="about-us">
+                        </div>
+                        <div class="active-customer d-flex align-items-center">
+                            <div class="icon">
+
+                            </div>
+                            <div class="title">
+                                <h2 class="number"><span>5000</span>кв. м</h2>
+                                <p>построенно</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-xxl-7" >
+                    <div class="about-info ms-4">
+                        <div class="section-title-one">
+                            <span class="sub-title uppercase">О нас</span>
+                            <h2 class="title">"СК Масштаб — надежное строительство для вашего будущего!"</h2>
+                        </div>
+                        <p>За время своей работы компания накопила значительный опыт, что позволяет нам уверенно
+                            реализовывать проекты любого масштаба. Мы постоянно развиваемся, стремительно наращиваем
+                            темпы работы и укрепляем свои позиции на рынке строительных услуг. </p>
+                        <div class="about-list">
+                            <div class="about-list-items d-flex">
+                                <div class="icon">
+                                    <i class="fas fa-angle-double-right"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="title">Индивидуальный подход</h4>
+                                    <p>Мы учитываем все пожелания клиентов и предлагаем гибкие решения для каждого
+                                        проекта.</p>
+                                </div>
+                            </div>
+                            <div class="about-list-items d-flex">
+                                <div class="icon">
+                                    <i class="fas fa-angle-double-right"></i>
+                                </div>
+                                <div class="text">
+                                    <h4 class="title">Доступные цены</h4>
+                                    <p>Оптимизация процессов и отсутствие лишних накладных расходов позволяют предлагать
+                                        конкурентные цены..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about us part end -->
+
+    <!-- our services part start -->
+    <section class="services-area-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title-one">
+                        <span class="sub-title uppercase no-after dark wow fadeInLeft" data-wow-delay=".2s">наши предложения</span>
+                        <h2 class="title wow fadeInLeft" data-wow-delay=".4s">Что мы можем!
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 ms-auto align-self-center">
+                    <div class="service-summery wow fadeInRight" data-wow-delay=".2s">
+                        <p>От проектирования до сдачи объекта "под ключ" — мы берем на себя все этапы строительства.
+                            Cтараемся максимально учитывать временные рамки заказчика и соблюдаем установленные
+                            сроки. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-1.png' %}" alt="service-1"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Подготовительные работы</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - планировка земельных участков</p>
+                                    <p> - копка котлованов</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-2.png' %}" alt="service-2"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Устройство фундаментов</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - вязка армокаркаса, укладка бетона</p>
+                                    <p> - свайные работы: забивные и буро–набивные сваи</p>
+                                    <p> - монолитные железобетонные</p>
+                                    <p> - сборные железобетонные</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-3.png' %}" alt="service-3"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Устройство ограждающих конструкций</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - монтаж сэндвич-панелей</p>
+                                    <p> - монтаж газоблока</p>
+                                    <p> - монтаж вентилируемых фасадов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-4.png' %}" alt="service-4"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Устройство кровель различных типов</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - жесткая, мягкая, мембранная, сэндвич-панель</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-5.png' %}" alt="service-5"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Отделочные работы</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - кладка перегородок из кирпича, газоблока</p>
+                                    <p> - устройство бетонных полов в том числе топинговых</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-6.png' %}" alt="service-6"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Монтаж внутренних и наружных инженерных сетей</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - канализация</p>
+                                    <p> - отопление</p>
+                                    <p> - вентиляция</p>
+                                    <p> - слаботочные сети</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto mx-lg-0 col-lg-12 service-item-one-column">
+                    <div class="service-item-one">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="image">
+                                    <a href="service-details.html" class="d-block w-100">
+                                        <img src="{% static 'core/assets/img/services/service-7.png' %}" alt="service-7"
+                                             class="img-fluid w-100">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="service-title ms-lg-4">
+                                    <h4 class="title">
+                                        <a href="service-details.html">Специальные работы</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 col-xl-3 align-self-center">
+                                <div class="description">
+                                    <p> - Монтаж металлоконструкций зданий любой сложности</p>
+                                    <p> - Благоустройство прилегающих территорий</p>
+                                    <p> - Работы по демонтажу сооружений</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our services part end -->
+
+    <!-- recent work part start -->
+    <section class="recent-work-area-one" id="our-projects">
+        <div class="recent-work-one-bg">
+            <div class="container" >
+                <div class="row">
+                    <div class="col-sm-10 col-md-8 col-lg-6">
+                        <div class="section-title-one">
+                            <span class="sub-title uppercase wow fadeInUp" data-wow-delay=".2s">Строим с уверенностью</span>
+                            <h2 class="title text-white wow fadeInUp" data-wow-delay=".4s">Наши объекты</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row recent-work-slider-one">
+                    {% for p in projects %}
+                    <div class="col-lg-4">
+                        <div class="project-item-one position-relative">
+                            <div class="image">
+                                <a href="{% url 'project_detail' p.pk %}" class="d-block w-100">
+                                    <img src="{{ p.photo1.url }}" alt="work-{{ forloop.counter }}"
+                                         class="img-fluid w-100">
+                                </a>
+                            </div>
+                            <div class="info position-absolute bottom-0 start-0 w-100 d-flex justify-content-between align-items-center">
+                                <div class="text">
+                                    <h4 class="title">
+                                        <a href="{% url 'project_detail' p.pk %}">{{ p.company }}</a>
+                                    </h4>
+                                    <p>{{ p.text|slice:":100" }}</p>
+                                </div>
+                                <div class="plus">
+                                    <a href="{% url 'project_detail' p.pk %}"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+    <!-- recent work part end -->
+
+
+    <!-- working process part start -->
+    <section class="working-process-area-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title-one">
+                        <span class="sub-title uppercase no-after dark">Почему именно мы</span>
+                        <h2 class="title">Наши преимущества</h2>
+                    </div>
+                    <div class="working-process-info">
+                        <ul>
+                            <li>Наши специалисты имеют многолетний опыт и регулярно повышают квалификацию.</li>
+                            <li>ценим каждого клиента и стремимся к долгосрочному сотрудничеству.</li>
+                            <li>Небольшой размер компании позволяет быстро принимать решения и оперативно выполнять
+                                поставленные задачи.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-5 ms-auto">
+                    <div class="working-process-item d-flex justify-content-between align-items-center">
+                        <div class="info d-flex align-items-center">
+                            <div class="image">
+                                <img src="{% static 'core/assets/img/working-process/icon-1.svg' %}" alt="icon-1">
+                            </div>
+                            <div class="title">
+                                <h4>Опытная команда</h4>
+                            </div>
+                        </div>
+                        <div class="number">
+                            <h3>01</h3>
+                        </div>
+                    </div>
+                    <div class="working-process-item d-flex justify-content-between align-items-center">
+                        <div class="info d-flex align-items-center">
+                            <div class="image">
+                                <img src="{% static 'core/assets/img/working-process/icon-2.svg' %}" alt="icon-2">
+                            </div>
+                            <div class="title">
+                                <h4>Сервисный подход</h4>
+                            </div>
+                        </div>
+                        <div class="number">
+                            <h3>02</h3>
+                        </div>
+                    </div>
+                    <div class="working-process-item d-flex justify-content-between align-items-center">
+                        <div class="info d-flex align-items-center">
+                            <div class="image">
+                                <img src="{% static 'core/assets/img/working-process/icon-3.svg' %}" alt="icon-3">
+                            </div>
+                            <div class="title">
+                                <h4>Оперативность</h4>
+                            </div>
+                        </div>
+                        <div class="number">
+                            <h3>03</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- working process part end -->
+
+    <!-- faq part start -->
+    <section class="faq-area-one" id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title-one">
+                        <span class="sub-title uppercase">Связаться с нами</span>
+                        <h2 class="title">Как вам удобнее? Выбирайте!</h2>
+                    </div>
+                    <div class="faq-body">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        Электронная почта
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>skmasshtab74@mail.ru</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                        Номер телефона
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>+7 902 866-77-95</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                        Адрес
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>г. Челябинск, Копейское шоссе, 16А</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 ms-auto">
+                    <div class="faq-image">
+                        <div class="image-one">
+                            <img src="{% static 'core/assets/img/faqs/faq-image-one.png' %}" alt="faq-image-one">
+
+                        </div>
+                        <div class="image-two">
+                            <img src="{% static 'core/assets/img/faqs/faq-image-two.png' %}" alt="faq-image-two"
+                                 class="img-fluid w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- faq part end -->
+</main>
+<!-- main area part end -->
+
+<!-- scroll top part start -->
+<button class="scroll-to-top">
+    <i class="fas fa-angle-up"></i>
+</button>
+<!-- scroll top part end -->
+
+<!-- footer part start -->
+<footer class="footer-area-one">
+    <div class="footer-area-one-bg">
+        <div class="container">
+            <div class="footer-top-one">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="{% url 'home' %}">
+                                    <img src="{% static 'core/assets/img/logo/white-logo.png' %}" alt="white-logo">
+
+                                </a>
+                            </div>
+                            <div class="footer-content">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget">
+                            <h4 class="footer-title uppercase">Контакты</h4>
+                            <div class="footer-address">
+                                <ul>
+                                    <li class="d-flex">
+                                        <div class="icon">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </div>
+                                        <div class="content">
+                                            <p>г. Челябинск, Копейское шоссе, 16А</p>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="content">
+                                            <a href="mailto:skmasshtab74@mail.ru">skmasshtab74@mail.ru</a>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex">
+                                        <div class="icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div class="content">
+                                            <a href="tel:(405)555-0128">+7 902 866-77-95</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="copyright">
+                            <p>© СК Масштаб 2025 | Все права защищены</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="links text-lg-end">
+                            <ul>
+                                <li><a href="{% url 'confidence' %}">Политика конфиденциальности</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer part end -->
+
+
+<!-- JS here -->
+<script src="{% static 'core/assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'core/assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'core/assets/js/jquery.odometer.min.js' %}"></script>
+<script src="{% static 'core/assets/js/jquery.appear.js' %}"></script>
+<script src="{% static 'core/assets/js/wow.min.js' %}"></script>
+<script src="{% static 'core/assets/js/slick.min.js' %}"></script>
+<script src="{% static 'core/assets/js/script.js' %}"></script>
+
+</body>
+
+</html>
